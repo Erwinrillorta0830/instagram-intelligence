@@ -100,7 +100,7 @@ export const processSingleTranscription = inngest.createFunction(
             { event: "transcription/post.requested" },
         ],
         retries: 0,
-        concurrency: { limit: 6 },
+        concurrency: { limit: 2 },
     },
     async ({ event, step }) => {
         const { runId, postId } = event.data;
